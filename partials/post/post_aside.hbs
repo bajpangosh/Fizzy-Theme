@@ -9,8 +9,8 @@
                 {{#if primary_tag}}
                     {{!-- get # of posts under primary tag, enlarge post card if no other posts --}}
                     {{#get "posts" filter="tags:{{primary_tag.slug}}"}}
-                    {{plural pagination.total empty="<div class='column card-frame is-6-tablet is-6-desktop'>" 
-                                                singular="<div class='column card-frame is-6-tablet is-6-desktop'>" 
+                    {{plural pagination.total empty="<div class='column card-frame is-6-tablet is-6-desktop'>"
+                                                singular="<div class='column card-frame is-6-tablet is-6-desktop'>"
                                                 plural="<div class='column card-frame is-6-tablet is-4-desktop'>"}}
                     {{/get}}
                 {{else}}
@@ -25,7 +25,7 @@
 
                 {{!-- related posts: start --}}
                 {{#if primary_tag}}
-                {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
+                {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
                 {{#if related_posts}}
                 <div class="column is-full-tablet is-4-desktop">
                     <article class="box tag-list is-vpadding-2 has-text-centered has-text-light" style="background-image: url({{asset 'images/dark-cover.jpg'}})">
@@ -55,14 +55,14 @@
                 {{/get}}
                 {{/if}}
                 {{!-- related posts: end --}}
-                
+
                 {{!-- next post: start --}}
                 {{!-- whether primary_tag exist --}}
                 {{#if primary_tag}}
                     {{!-- get # of posts under primary tag, enlarge post card if no other posts --}}
                     {{#get "posts" filter="tags:{{primary_tag.slug}}"}}
-                    {{plural pagination.total empty="<div class='column card-frame is-6-tablet is-6-desktop'>" 
-                                                singular="<div class='column card-frame is-6-tablet is-6-desktop'>" 
+                    {{plural pagination.total empty="<div class='column card-frame is-6-tablet is-6-desktop'>"
+                                                singular="<div class='column card-frame is-6-tablet is-6-desktop'>"
                                                 plural="<div class='column card-frame is-6-tablet is-4-desktop'>"}}
                     {{/get}}
                 {{else}}
